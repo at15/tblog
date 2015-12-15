@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "out": "build/bundle-ts.js"
+  },
+  "files": [
+    "src/typings/tsd.d.ts"
+  ]
+}

@@ -2,6 +2,8 @@
 
 ## Specs
 
+TODO: embed json using tool
+
 ````json
 {
   "author": "at15",
