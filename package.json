@@ -1,0 +1,13 @@
+{
+  "name": "tblog",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/at15/tblog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/at15/tblog/issues"
+  }
+}
