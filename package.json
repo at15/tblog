@@ -11,14 +11,16 @@
     "url": "https://github.com/at15/tblog/issues"
   },
   "devDependencies": {
+    "mocha": "^2.3.4",
+    "css-loader": "^0.23.0",
+    "style-loader": "^0.13.0",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",
-    "ts-loader": "^0.7.2",
     "typescript": "^1.6.2",
     "webpack": "^1.12.9"
   },
   "scripts": {
-    "webpack": "webpack",
+    "pack": "webpack",
     "watch": "webpack --progress --colors --watch",
     "tsc": "tsc",
     "tscw": "tsc -w"

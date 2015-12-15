@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "module": "commonjs",
     "out": "build/bundle-ts.js"
   },
+  "exclude": [
+    "node_modules"
+  ],
   "files": [
     "src/typings/tsd.d.ts"
   ]
