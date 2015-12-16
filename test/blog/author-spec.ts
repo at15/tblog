@@ -3,7 +3,6 @@
  */
 import chai = require('chai');
 import Author = require('../../src/blog/author');
-import Author = require("../../src/blog/author");
 var expect = chai.expect;
 
 describe('Author', () => {

@@ -30,12 +30,12 @@ class Author extends Config {
         if (typeof config === 'undefined') {
             throw new TypeError('author config must be provided');
         }
-        this.setAttributes(config, [
+        this.setRequiredAttributes(config, [
             'name', 'avatar'
         ]);
-        this.setAttributes(config, [
+        this.setOptionalAttributes(config, [
             'email', 'github', 'facebook', 'twitter', 'weibo'
-        ],false);
+        ]);
     }
 }
 
