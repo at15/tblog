@@ -10,6 +10,7 @@
     "common/dummy-spec.ts",
     "common/alia-spec.ts",
     "common/config-spec.ts",
+    "blog/author-spec.ts",
     "../src/typings/tsd.d.ts"
   ]
 }

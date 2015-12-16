@@ -3,6 +3,7 @@
  */
 'use strict';
 
+import Config = require("../common/config");
 
 // the full author config
 interface AuthorConfig {
@@ -15,7 +16,7 @@ interface AuthorConfig {
     weibo?: string
 }
 
-class Author {
+class Author extends Config {
     public name:string = '';
     public avatar:string = '';
     public email:string = '';
@@ -25,23 +26,16 @@ class Author {
     public weibo:string = '';
 
     constructor(config:AuthorConfig) {
+        super();
         if (typeof config === 'undefined') {
             throw new TypeError('author config must be provided');
         }
-        // assign value from config, TODO: may use lodash?
-        this.name = config.name;
-        this.avatar = config.avatar;
-        if (typeof config.email === 'string') {
-            this.email = config.email;
-        }
-        if (typeof config.github === 'string') {
-            this.github = config.github;
-        }
-    }
-
-    isValid():boolean {
-        return (typeof this.name === 'string' && this.name != '')
-            && (typeof this.avatar === 'string' && this.avatar != '')
+        this.setAttributes(config, [
+            'name', 'avatar'
+        ]);
+        this.setAttributes(config, [
+            'email', 'github', 'facebook', 'twitter', 'weibo'
+        ],false);
     }
 }
 
