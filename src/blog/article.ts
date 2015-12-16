@@ -3,9 +3,11 @@
  */
 'use strict';
 
-
+// the full article config
 interface ArticleConfig {
-
+    title:string,
+    author:string,
+    keywords?:string[]
 }
 
 class Article {

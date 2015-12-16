@@ -13,6 +13,10 @@
     "common/config.ts",
     "blog/author.ts",
     "blog/article.ts",
+    "store/abstract-store.ts",
+    "store/abstract-table.ts",
+    "store/mem-store.ts",
+    "store/mem-table.ts",
     "typings/tsd.d.ts"
   ]
 }
