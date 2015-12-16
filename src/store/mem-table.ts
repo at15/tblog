@@ -3,9 +3,10 @@
  */
 'use strict';
 
-import AbstractTable = require("./abstrac-table");
+import AbstractTable = require("./abstract-table");
 
 class MemTable implements AbstractTable {
+    name:string;
     identity:string;
     index:{ [key:string]:Object; }
 }

@@ -3,10 +3,15 @@
  */
 'use strict';
 
-import Table = require('./abstrac-table');
+import Mode = require('./mode');
+import AbstractTable = require('./abstract-table');
+import Query = require("./query");
+
 
 interface AbstractStore {
-    tables:Table[];
+    tables:AbstractTable[];
+    mode:Mode;
+    query(q:Query): Object[];
 }
 
 export = AbstractStore

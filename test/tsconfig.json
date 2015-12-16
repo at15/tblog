@@ -11,6 +11,7 @@
     "common/alia-spec.ts",
     "common/config-spec.ts",
     "blog/author-spec.ts",
+    "store/query-spec.ts",
     "../src/typings/tsd.d.ts"
   ]
 }

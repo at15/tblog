@@ -4,6 +4,8 @@
 'use strict';
 
 interface AbstractTable {
+    name:string;
+    // id, name, use to build index
     identity:string;
     index:{ [key:string]:Object; }
 }
