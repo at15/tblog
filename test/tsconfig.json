@@ -8,6 +8,7 @@
   ],
   "files": [
     "common/dummy-spec.ts",
+    "common/alia-spec.ts",
     "../src/typings/tsd.d.ts"
   ]
 }

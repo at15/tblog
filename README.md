@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/at15/tblog.svg)](https://travis-ci.org/at15/tblog)
 
-A git based blog that support multiple autors
+A static blog builder for team
 
 ## Features
 
@@ -11,8 +11,8 @@ A git based blog that support multiple autors
 
 ## Dev
 
-- `npm run watch` to watch using webpack
-- `npm run tscw` to watch typescript
+- `gulp build` to build source and test
+- `npm test` to run unit test
 
 ## Ref
 
