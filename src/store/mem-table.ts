@@ -8,7 +8,8 @@ import AbstractTable = require("./abstract-table");
 class MemTable implements AbstractTable {
     name:string;
     identity:string;
-    index:{ [key:string]:Object; }
+    index:{ [key:string]:Object; };
+    data:Object[];
 }
 
 export = MemTable;

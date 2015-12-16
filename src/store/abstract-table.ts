@@ -8,6 +8,7 @@ interface AbstractTable {
     // id, name, use to build index
     identity:string;
     index:{ [key:string]:Object; }
+    data:Object[];
 }
 
 export = AbstractTable

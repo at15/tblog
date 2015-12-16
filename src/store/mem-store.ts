@@ -19,9 +19,22 @@ class MemStore implements AbstractStore {
             // TODO: log warning
             return [];
         }
-        var result = [];
+
         // check the data in table
-        // if we are using index
+        var result = [];
+        var table = this.tables[q.getTable()];
+
+
+        // TODO: use index
+        if (this.canUseIndex(table, q)) {
+
+        }
+
+        // we just loop through all the data ...
+        for (var row of table.data) {
+            // check if it match.
+        }
+
         // return empty array by default
         return result;
     }
@@ -38,7 +51,7 @@ class MemStore implements AbstractStore {
         return false;
     }
 
-    private useIndex(table:AbstractTable, query:Query):boolean {
+    private canUseIndex(table:AbstractTable, query:Query):boolean {
         return false;
     }
 }
