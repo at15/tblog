@@ -12,5 +12,12 @@ gulp.task('build-src', function () {
     var tsResult = srcProject.src() // instead of gulp.src(...)
         .pipe(ts(srcProject));
 
-    return tsResult.js.pipe(gulp.dest('.'));
+    return tsResult.js.pipe(gulp.dest('src'));
+});
+
+gulp.task('build-test', function () {
+    var tsResult = testProject.src() // instead of gulp.src(...)
+        .pipe(ts(testProject));
+
+    return tsResult.js.pipe(gulp.dest('test'));
 });

@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "out": "build/bundle-ts.js"
+    "module": "commonjs"
   },
   "exclude": [
     "node_modules"
