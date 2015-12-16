@@ -22,6 +22,6 @@
     "webpack": "^1.12.9"
   },
   "scripts": {
-    "test": "mocha test/**/*-spec.js"
+    "test": "gulp build && mocha test/**/*-spec.js"
   }
 }
