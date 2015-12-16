@@ -59,6 +59,14 @@ class MemStore implements AbstractStore {
         return false;
     }
 
+    public createTable(table:AbstractTable) {
+        if (this.tableExists(table.name)) {
+            throw new Error(table.name + ' already exists');
+        }
+        // TODO: may use deep copy ?
+        this.tables.push(table);
+    }
+
     private canUseIndex(table:AbstractTable, query:Query):boolean {
         return false;
     }
