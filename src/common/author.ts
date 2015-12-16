@@ -25,6 +25,9 @@ module TBlog.common {
         public weibo:string = '';
 
         constructor(config:AuthorConfig) {
+            if (typeof config === 'undefined') {
+                throw new TypeError('author config must be provided');
+            }
             // assign value from config, TODO: may use lodash?
             this.name = config.name;
             this.avatar = config.avatar;
@@ -34,6 +37,11 @@ module TBlog.common {
             if (typeof config.github === 'string') {
                 this.github = config.github;
             }
+        }
+
+        isValid():boolean {
+            return (typeof this.name === 'string' && this.name != '')
+                && (typeof this.avatar === 'string' && this.avatar != '')
         }
     }
 }

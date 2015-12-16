@@ -7,17 +7,14 @@ var expect = chai.expect;
 import Author = require('../../src/common/author');
 
 describe('Author', () => {
-    // FIXME: ts won't throw error at compile time, and it does not add check for interface
-    // in runtime
+    // TS will have error in compile time.
     it('require name and avatar', ()=> {
-        //expect(() => {
-        //    new Author({})
-        //}).to.throw();
-        //expect(() => {
-        //    new Author({name: 'jack'})
-        //}).to.throw();
-        //expect(() => {
-        //    new Author({name: 'jack', avatar: 'abc'})
-        //}).to.not.throw();
+        expect(()=> {
+            new Author();
+        }).to.throw(TypeError);
+        var a2 = new Author({name: 'jack'});
+        expect(a2.isValid()).to.equal(false);
+        var a3 = new Author({name: 'jack', avatar: 'a.png'});
+        expect(a3.isValid()).to.equal(true);
     });
 });
