@@ -23,6 +23,9 @@
   },
   "scripts": {
     "test": "gulp build && mocha test/**/*-spec.js && npm run clean",
-    "clean":"rm src/**/*.js && rm test/**/*.js"
+    "clean": "rm src/**/*.js && rm test/**/*.js"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
   }
 }

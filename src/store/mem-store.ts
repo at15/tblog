@@ -3,6 +3,7 @@
  */
 'use strict';
 
+import _ = require('lodash');
 import Mode = require('./mode');
 import AbstractStore = require("./abstract-store");
 import AbstractTable = require("./abstract-table");
@@ -32,7 +33,10 @@ class MemStore implements AbstractStore {
 
         // we just loop through all the data ...
         for (var row of table.data) {
-            // check if it match.
+            if (q.match(row)) {
+                // TODO:should use shallow copy? or deep copy?
+                result.push(_.cloneDeep(row))
+            }
         }
 
         // return empty array by default
