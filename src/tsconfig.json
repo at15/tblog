@@ -8,7 +8,7 @@
     "node_modules"
   ],
   "files": [
-    "src/common/dummy.ts",
-    "src/typings/tsd.d.ts"
+    "common/dummy.ts",
+    "typings/tsd.d.ts"
   ]
 }
