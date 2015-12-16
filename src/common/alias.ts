@@ -3,22 +3,21 @@
  */
 'use strict';
 
-module TBlog.common {
-    export class Alias {
-        private map:{};
+class Alias {
+    private map:{};
 
-        constructor(config:{}) {
-            this.map = config;
-        }
+    constructor(config:{}) {
+        this.map = config;
+    }
 
-        get(name:string):string {
-            if (typeof this.map[name] === 'string') {
-                return this.map[name];
-            }
-            // TODO: maybe we should have a warning?
-            return name;
+    get(name:string):string {
+        if (typeof this.map[name] === 'string') {
+            return this.map[name];
         }
+        // TODO: maybe we should have a warning?
+        return name;
     }
 }
 
-export = TBlog.common.Alias;
+
+export = Alias;

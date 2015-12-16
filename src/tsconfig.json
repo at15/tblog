@@ -10,7 +10,9 @@
   "files": [
     "common/dummy.ts",
     "common/alias.ts",
-    "common/author.ts",
+    "common/config.ts",
+    "blog/author.ts",
+    "blog/article.ts",
     "typings/tsd.d.ts"
   ]
 }

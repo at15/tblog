@@ -3,12 +3,11 @@
  */
 'use strict';
 
-module TBlog.common {
-    export class Dummy {
-        public static foo():string {
-            return 'bar';
-        }
+class Dummy {
+    public static foo():string {
+        return 'bar';
     }
 }
 
-export = TBlog.common.Dummy;
+
+export = Dummy;

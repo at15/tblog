@@ -22,6 +22,7 @@
     "webpack": "^1.12.9"
   },
   "scripts": {
-    "test": "gulp build && mocha test/**/*-spec.js"
+    "test": "gulp build && mocha test/**/*-spec.js && npm run clean",
+    "clean":"rm src/**/*.js && rm test/**/*.js"
   }
 }
