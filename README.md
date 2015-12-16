@@ -1,5 +1,7 @@
 # tblog
 
+[![Build Status](https://travis-ci.org/at15/tblog.svg)](https://travis-ci.org/at15/tblog)
+
 A git based blog that support multiple autors
 
 ## Features
