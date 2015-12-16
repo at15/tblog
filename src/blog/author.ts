@@ -27,6 +27,7 @@ class Author extends Config {
 
     constructor(config:AuthorConfig) {
         super();
+        // TODO: move this to Config class
         if (typeof config === 'undefined') {
             throw new TypeError('author config must be provided');
         }

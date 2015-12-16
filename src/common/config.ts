@@ -3,7 +3,7 @@
  */
 'use strict';
 // a class that force certain attr set in runtime
-
+// TODO: this should be called configurable
 class Config {
     public setAttributes(config:Object,
                          attributes:string[], required:boolean = true) {

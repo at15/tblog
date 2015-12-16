@@ -4,12 +4,24 @@
 'use strict';
 
 import AbstractTable = require("./abstract-table");
+import Config = require('../common/config');
 
-class MemTable implements AbstractTable {
+
+interface TableDef {
+    name:string,
+    identity:string
+}
+
+class MemTable extends Config implements AbstractTable {
     name:string;
     identity:string;
     index:{ [key:string]:Object; };
     data:Object[];
+
+    constructor(config:TableDef) {
+        super();
+        this.setAttributes(config, ['name', 'identity']);
+    }
 }
 
 export = MemTable;

@@ -13,6 +13,8 @@
     "blog/author-spec.ts",
     "store/criteria-spec.ts",
     "store/query-spec.ts",
+    "store/mem-table-spec.ts",
+    "store/mem-store-spec.ts",
     "../src/typings/tsd.d.ts"
   ]
 }

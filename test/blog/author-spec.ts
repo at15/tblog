@@ -8,12 +8,16 @@ var expect = chai.expect;
 describe('Author', () => {
 
     it('through exception on wrong config', ()=> {
-        var badConfig = {};
-        var badConfig2 = {name: 'mie'};
+        var badConfig = {name: 'mie', avatar: 'github'};
+        var badConfig2 = {name: 'mie', avatar: 'github'};
         expect(()=> {
+            // NOTE: this ugly method avoid typescript warning for wrong argument?
+            delete badConfig.name;
+            delete badConfig.avatar;
             new Author(badConfig);
         }).to.throw();
         expect(()=> {
+            delete badConfig2.avatar;
             new Author(badConfig2);
         }).to.throw('avatar is not defined');
     });

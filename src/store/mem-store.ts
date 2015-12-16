@@ -14,6 +14,10 @@ class MemStore implements AbstractStore {
     tables:AbstractTable[];
     mode:Mode = Mode.Develop;
 
+    constructor() {
+        this.tables = [];
+    }
+
     query(q:Query):Object[] {
         // check if table exists
         if (!this.tableExists(q.getTable())) {
@@ -43,7 +47,7 @@ class MemStore implements AbstractStore {
         return result;
     }
 
-    private tableExists(tableName:string):boolean {
+    public tableExists(tableName:string):boolean {
         if (typeof tableName === 'undefined') {
             return false;
         }
