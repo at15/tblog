@@ -22,5 +22,24 @@ describe('Config', () => {
             //    expect(e).to.equal('a');
             //});
         }).to.throw('b is not defined');
+
+        expect(()=> {
+            var c = new Config();
+            c.setAttributes({
+                    a: 'jack'
+                },
+                ['a']
+            );
+        }).not.to.throw();
     });
+
+    it('does not throw error when required is false', ()=> {
+        expect(() => {
+            var c = new Config();
+            c.setAttributes(
+                {a: 'jack'},
+                ['a', 'b'], false
+            );
+        }).not.to.throw('b is not defined');
+    })
 });

@@ -6,11 +6,15 @@
 class Config {
     public setAttributes(config:Object,
                          attributes:Array<string>, required:boolean = true) {
-        // loop all the attributes
+        // loop to check and set all the attributes
         for (var attribute of attributes) {
             if (typeof config[attribute] === 'undefined') {
-                throw new TypeError(attribute + ' is not defined');
+                if (required) {
+                    throw new TypeError(attribute + ' is not defined');
+                }
+                continue;
             }
+            this[attribute] = config[attribute];
         }
     }
 }
