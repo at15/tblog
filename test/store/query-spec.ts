@@ -22,4 +22,10 @@ describe('Store', () => {
         expect(q.match(man2)).to.equal(true);
         expect(q.match(man3)).to.equal(true);
     });
+
+    it('can insert data', ()=> {
+        var q = new Query();
+        q.insert({a: 123});
+        expect(q.getData()).to.eql({a: 123});
+    })
 });

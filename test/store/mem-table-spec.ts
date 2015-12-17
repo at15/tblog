@@ -12,5 +12,14 @@ describe('MemTable', ()=> {
             delete badBoy.identity;
             new MemTable(badBoy);
         }).to.throw('name is not defined');
-    })
+
+        expect(()=> {
+            new MemTable({
+                name: 'boy',
+                identity: 'name'
+            });
+        }).not.to.throw();
+    });
+
+
 });

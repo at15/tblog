@@ -12,6 +12,7 @@ interface AbstractStore {
     tables:AbstractTable[];
     mode:Mode;
     query(q:Query): Object[];
+    getTable(name:string):AbstractTable;
 }
 
 export = AbstractStore

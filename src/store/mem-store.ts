@@ -21,14 +21,12 @@ class MemStore implements AbstractStore {
     query(q:Query):Object[] {
         // check if table exists
         if (!this.tableExists(q.getTable())) {
-            // TODO: log warning
-            return [];
+            throw new TypeError('table ' + q.getTable() + ' does not exist');
         }
 
         // check the data in table
         var result = [];
-        var table = this.tables[q.getTable()];
-
+        var table = this.getTable(q.getTable());
 
         // TODO: use index
         if (this.canUseIndex(table, q)) {
@@ -42,12 +40,26 @@ class MemStore implements AbstractStore {
                 result.push(_.cloneDeep(row))
             }
         }
-
-        // return empty array by default
         return result;
     }
 
-    public tableExists(tableName:string):boolean {
+    getTable(tableName:string):AbstractTable {
+        for (var table of this.tables) {
+            if (tableName === table.name) {
+                return table;
+            }
+        }
+        throw new RangeError('table ' + tableName + ' not found');
+    }
+
+    insert(q:Query) {
+        if (!this.tableExists(q.getTable())) {
+            throw new Error('table ' + q.getTable() + ' not found');
+        }
+        return this.getTable(q.getTable()).insert(q);
+    }
+
+    tableExists(tableName:string):boolean {
         if (typeof tableName === 'undefined') {
             return false;
         }
@@ -59,7 +71,7 @@ class MemStore implements AbstractStore {
         return false;
     }
 
-    public createTable(table:AbstractTable) {
+    createTable(table:AbstractTable) {
         if (this.tableExists(table.name)) {
             throw new Error(table.name + ' already exists');
         }

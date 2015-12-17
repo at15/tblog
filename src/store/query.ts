@@ -8,6 +8,7 @@ class Query {
     private table:string;
     // FIXME: criteria is the plural form for criterion
     private criteria:Criteria[];
+    private data:Object;
 
     constructor() {
         this.criteria = [];
@@ -36,6 +37,14 @@ class Query {
             }
         }
         return true;
+    }
+
+    insert(data:Object): void {
+        this.data = data;
+    }
+
+    getData() {
+        return this.data ? this.data : null;
     }
 }
 
