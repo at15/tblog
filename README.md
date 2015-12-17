@@ -12,7 +12,11 @@ A static blog builder for team
 ## Dev
 
 - `gulp build` to build source and test
-- `npm test` to run unit test
+- `npm test` to run unit test (note: compiled js files will be deleted if test pass)
+
+## Structure 
+
+- a in-memory data base to store config and generate index, see [src/store](src/store)
 
 ## Ref
 
