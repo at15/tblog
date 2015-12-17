@@ -31,10 +31,10 @@ describe('Criteria', ()=> {
         expect(cb.match({age: 16})).to.equal(false);
         expect(cb.match({age: 17})).to.equal(true);
 
-        var cl = new Criteria('age',16,'<');
-        expect(cl.match({age:15})).to.equal(true);
-        expect(cl.match({age:16})).to.equal(false);
-        expect(cl.match({age:17})).to.equal(false);
+        var cl = new Criteria('age', 16, '<');
+        expect(cl.match({age: 15})).to.equal(true);
+        expect(cl.match({age: 16})).to.equal(false);
+        expect(cl.match({age: 17})).to.equal(false);
     });
 
     it('operator <= >=', ()=> {
@@ -43,9 +43,18 @@ describe('Criteria', ()=> {
         expect(cb.match({age: 16})).to.equal(true);
         expect(cb.match({age: 17})).to.equal(true);
 
-        var cl = new Criteria('age',16,'<=');
-        expect(cl.match({age:15})).to.equal(true);
-        expect(cl.match({age:16})).to.equal(true);
-        expect(cl.match({age:17})).to.equal(false);
+        var cl = new Criteria('age', 16, '<=');
+        expect(cl.match({age: 15})).to.equal(true);
+        expect(cl.match({age: 16})).to.equal(true);
+        expect(cl.match({age: 17})).to.equal(false);
+    });
+
+    it('custom function for compare ', ()=> {
+        var cf = new Criteria('age', '', function (value) {
+            return value % 2 === 0;
+        });
+        expect(cf.match({age: 15})).to.equal(false);
+        expect(cf.match({age: 16})).to.equal(true);
+        expect(cf.match({age: 17})).to.equal(false);
     });
 });
