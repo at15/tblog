@@ -39,12 +39,19 @@ class Criteria {
         }
 
         if (operator === '>') {
-            console.log(obj[this.k], this.v);
             return obj[this.k] > this.v;
+        }
+
+        if (operator === '>=') {
+            return obj[this.k] >= this.v;
         }
 
         if (operator === '<') {
             return obj[this.k] < this.v;
+        }
+
+        if (operator === '<=') {
+            return obj[this.k] <= this.v;
         }
 
         if (typeof operator === 'function') {
