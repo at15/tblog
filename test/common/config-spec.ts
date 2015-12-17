@@ -10,7 +10,7 @@ describe('Config', () => {
 
     it('throw error when attribute not defined', ()=> {
         expect(() => {
-            var c = new Config();
+            var c = new Config({});
             c.setAttributes(
                 {a: 'jack'},
                 ['a', 'b']
@@ -24,7 +24,7 @@ describe('Config', () => {
         }).to.throw('b is not defined');
 
         expect(()=> {
-            var c = new Config();
+            var c = new Config({});
             c.setAttributes({
                     a: 'jack'
                 },
@@ -35,7 +35,7 @@ describe('Config', () => {
 
     it('does not throw error when required is false', ()=> {
         expect(() => {
-            var c = new Config();
+            var c = new Config({});
             c.setAttributes(
                 {a: 'jack'},
                 ['a', 'b'], false

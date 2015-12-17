@@ -5,6 +5,12 @@
 // a class that force certain attr set in runtime
 // TODO: this should be called configurable
 class Config {
+    constructor(config) {
+        if (typeof config === 'undefined') {
+            throw new TypeError('config is undefined');
+        }
+    }
+
     public setAttributes(config:Object,
                          attributes:string[], required:boolean = true) {
         // loop to check and set all the attributes

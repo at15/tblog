@@ -10,7 +10,7 @@
     "common/dummy-spec.ts",
     "common/alia-spec.ts",
     "common/config-spec.ts",
-    "blog/author-spec.ts",
+    "model/author-spec.ts",
     "store/criteria-spec.ts",
     "store/query-spec.ts",
     "store/mem-table-spec.ts",

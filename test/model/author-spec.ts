@@ -2,7 +2,7 @@
  * Created by gpl on 15/12/16.
  */
 import chai = require('chai');
-import Author = require('../../src/blog/author');
+import Author = require('../../src/model/author');
 var expect = chai.expect;
 
 describe('Author', () => {

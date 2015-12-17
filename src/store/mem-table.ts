@@ -20,7 +20,7 @@ class MemTable extends Config implements AbstractTable {
     data:Object[] = [];
 
     constructor(config:TableDef) {
-        super();
+        super(config);
         this.setAttributes(config, ['name', 'identity']);
     }
 
