@@ -8,10 +8,11 @@ class Query {
     private table:string;
     // FIXME: criteria is the plural form for criterion
     private criteria:Criteria[];
-    private data:Object;
+    private data:Object[];
 
     constructor() {
         this.criteria = [];
+        this.data = [];
     }
 
     // allow chain method
@@ -39,12 +40,12 @@ class Query {
         return true;
     }
 
-    insert(data:Object): void {
-        this.data = data;
+    insert(data:Object):void {
+        this.data.push(data);
     }
 
     getData() {
-        return this.data ? this.data : null;
+        return this.data;
     }
 }
 

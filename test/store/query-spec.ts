@@ -26,6 +26,6 @@ describe('Store', () => {
     it('can insert data', ()=> {
         var q = new Query();
         q.insert({a: 123});
-        expect(q.getData()).to.eql({a: 123});
+        expect(q.getData()[0]).to.eql({a: 123});
     })
 });

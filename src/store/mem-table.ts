@@ -29,8 +29,12 @@ class MemTable extends Config implements AbstractTable {
         if (typeof q === 'undefined') {
             throw new TypeError('query is undefined');
         }
-        if (null !== q.getData()) {
-            this.data.push(q.getData());
+        var data = q.getData();
+        if (data.length) {
+            for (var d of data) {
+                // TODO: add check here
+                this.data.push(d);
+            }
         }
         // TODO: warn when data is empty
     }
