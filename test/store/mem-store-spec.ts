@@ -53,7 +53,7 @@ describe('MemStore', ()=> {
         var q = new Query();
         q.setTable('author')
             .where('name', '', (value)=> {
-                return value.startsWith('jack');
+                return value.indexOf('jack') === 0;
             })
             .where('age', 1, '>=');
         var result = store.query(q);
