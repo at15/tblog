@@ -6,12 +6,12 @@
 import _ = require('lodash');
 import Mode = require('./mode');
 import AbstractStore = require("./abstract-store");
-import AbstractTable = require("./abstract-table");
+import MemTable = require("./mem-table");
 import Query = require("./query");
 
 
 class MemStore implements AbstractStore {
-    tables:AbstractTable[];
+    tables:MemTable[];
     mode:Mode = Mode.Develop;
 
     constructor() {
@@ -43,7 +43,7 @@ class MemStore implements AbstractStore {
         return result;
     }
 
-    getTable(tableName:string):AbstractTable {
+    getTable(tableName:string):MemTable {
         for (var table of this.tables) {
             if (tableName === table.name) {
                 return table;
@@ -71,7 +71,7 @@ class MemStore implements AbstractStore {
         return false;
     }
 
-    createTable(table:AbstractTable) {
+    createTable(table:MemTable) {
         if (this.tableExists(table.name)) {
             throw new Error(table.name + ' already exists');
         }
@@ -79,7 +79,7 @@ class MemStore implements AbstractStore {
         this.tables.push(table);
     }
 
-    private canUseIndex(table:AbstractTable, query:Query):boolean {
+    private canUseIndex(table:MemTable, query:Query):boolean {
         return false;
     }
 }

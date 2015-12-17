@@ -25,8 +25,8 @@ class Query {
         return this.table;
     }
 
-    where(k:string, v:string|number):Query {
-        this.criteria.push(new Criteria(k, v));
+    where(k:string, v:string|number, o:((Object) =>boolean)|string = '='):Query {
+        this.criteria.push(new Criteria(k, v, o));
         return this;
     }
 

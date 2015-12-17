@@ -37,18 +37,29 @@ describe('MemStore', ()=> {
         expect(result[0]).to.eql({name: 'jack'});
     });
 
-    it('insert multiple data', ()=> {
+    it('insert and query multiple data', ()=> {
         var num = 10;
         var insertQ = new Query();
         insertQ.setTable('author');
         for (var i = 0; i < num; i++) {
             insertQ.insert({
-                name: 'jack' + i
+                name: 'jack' + i,
+                age: i
             });
         }
         store.insert(insertQ);
         //console.log(store.getTable('author'));
         expect(store.getTable('author').data.length).to.equal(num);
+        var q = new Query();
+        q.setTable('author')
+            .where('name', '', (value)=> {
+                return value.startsWith('jack');
+            })
+            .where('age', 1, '>=');
+        var result = store.query(q);
+        expect(result[0]).to.eql({name: 'jack1', age: 1});
+        expect(result.length).to.equal(num - 1);
     });
+
 
 });
