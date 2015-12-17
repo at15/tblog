@@ -15,6 +15,7 @@
     "store/query-spec.ts",
     "store/mem-table-spec.ts",
     "store/mem-store-spec.ts",
+    "util/print-spec.ts",
     "../src/typings/tsd.d.ts"
   ]
 }

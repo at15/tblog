@@ -5,22 +5,29 @@
 
 import AbstractTable = require('../store/abstract-table');
 import TablePrinter = require('cli-table');
+import _ = require('lodash');
 
 class Print {
     static table(t:AbstractTable) {
         // instantiate
-        var table = new TablePrinter({
-            head: ['TH 1 label', 'TH 2 label']
-            , colWidths: [100, 200]
+        var printer = new TablePrinter({
+            style: {
+                head: ['cyan'],
+                // grey is not showing in my theme ...
+                border: ['cyan']
+            }
         });
 
-        // table is an Array, so you can `push`, `unshift`, `splice` and friends
-        table.push(
-            ['First value', 'Second value']
-            , ['First value', 'Second value']
-        );
+        // just show all the data, yeah.
+        for (var r of t.data) {
+            printer.push(
+                // TODO: iteration order is not guaranteed
+                _.values(r)
+            );
+        }
 
-        console.log(table.toString());
+        console.log('Table: ' + t.name);
+        console.log(printer.toString());
     }
 }
 

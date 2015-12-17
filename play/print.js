@@ -7,14 +7,15 @@ var table = new TablePrinter({
     //chars: {'mid': '<', 'left-mid': '>', 'mid-mid': '-', 'right-mid': '-'},
     style: {
         head: ['cyan'],
-        // grey is not showing ... 
+        // grey is not showing in my theme ...
         border: ['cyan']
     }
 });
 
 // table is an Array, so you can `push`, `unshift`, `splice` and friends
 table.push(
-    ['First value', 'Second value']
+    // it will handle extra value
+    ['First value', 'Second value','a']
     , ['First value', 'Second value']
 );
 
