@@ -47,7 +47,7 @@ describe('MemStore', ()=> {
             });
         }
         store.insert(insertQ);
-        console.log(store.getTable('author'));
+        //console.log(store.getTable('author'));
         expect(store.getTable('author').data.length).to.equal(num);
     });
 

@@ -8,10 +8,12 @@ class Criteria {
     private v;
     private o;
 
-    constructor(k:string, v:any, o:string = '=') {
+    constructor(k:string, v:any, o:((Object) =>boolean)|string = '=') {
         this.k = k;
         this.v = v;
         this.o = o;
+        //console.log('operator in constructor is ', o);
+        //console.log('this.o is ', this.o);
     }
 
     match(obj:Object):boolean {
@@ -28,19 +30,26 @@ class Criteria {
             return false;
         }
 
-        if (typeof this.o === 'undefined' || this.o === '=') {
+        var operator = this.o;
+
+        //console.log('operator in match is ', operator);
+
+        if (typeof operator === 'undefined' || operator === '=') {
             return strict ? obj[this.k] === this.v : obj[this.k] == this.v;
         }
 
-        if (this.o === '>') {
+        if (operator === '>') {
+            console.log(obj[this.k], this.v);
             return obj[this.k] > this.v;
         }
 
-        if (this.o === '<') {
+        if (operator === '<') {
             return obj[this.k] < this.v;
         }
 
-        // TODO: if o is function, call it to allow custom compare
+        if (typeof operator === 'function') {
+            return operator(obj[this.k]);
+        }
         return false;
     }
 
