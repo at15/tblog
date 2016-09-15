@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/at15/tblog.svg)](https://travis-ci.org/at15/tblog)
 
-A static blog builder for team
+A static blog builder for team. **See [tongquhq/about](https://github.com/tongquhq/about)** this project is abandoned
 
 ## Features
 
